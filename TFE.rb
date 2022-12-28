@@ -88,11 +88,23 @@ elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) #O
   medO = (initializeO.to_f - squareO.to_f) / -1
   finalizeO = Math.sqrt(medO.to_f)
 
-  puts ("Final Velocity is " + finalizeO.to_s)
+  puts ("Initial Velocity is " + finalizeO.to_s)
 
 elsif ($verifyAcceleration and $verifyFinali and $verifyFinalv) #X
+  initializeX = ($FinalI.to_f * $FinalI.to_f) - ($FinalI.to_f * $FinalI.to_f)
+  medX = 2.0 * $acceleration.to_f
+  finalizeX = initializeX.to_f / medX.to_f
 
+  puts ("Δx is " + finalizeX.to_s)
 
 elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) #A
+  
 
 end
+
+=begin
+v = 2.5
+i = 2.9
+d = 0.39
+a = -3
+=end
