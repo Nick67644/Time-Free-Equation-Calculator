@@ -75,16 +75,23 @@ end
 acceleration()
 
 if ($verifyAcceleration and $verifyDeltax and $verifyFinali) #F
-  initialize = 2 * $acceleration.to_i * $DeltaX.to_i
-  square = $FinalI.to_i.pow(2)
-  med = initialize.to_i / square.to_i
-  finalize = Math.sqrt(med.to_i)
+  initializeF = 2 * $acceleration.to_i * $DeltaX.to_i
+  squareF = $FinalI.to_i.pow(2)
+  medF = initializeF.to_i / squareF.to_i
+  finalizeF = Math.sqrt(medF.to_i)
 
-  puts ("Final Velocity is " + finalize.to_s)
+  puts ("Final Velocity is " + finalizeF.to_s)
 
 elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) #O
+  initializeO = 2 * $acceleration.to_i * $DeltaX.to_i
+  squareO = $Finalv.to_i.pow(2)
+  medO = initializeO.to_i / squareO.to_i
+  finalizeO = -Math.sqrt(medO.to_i)
+
+  puts ("Final Velocity is " + finalizeO.to_s)
 
 elsif ($verifyAcceleration and $verifyFinali and $verifyFinalv) #X
+
 
 elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) #A
 
