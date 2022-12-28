@@ -91,20 +91,19 @@ elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) #O
   puts ("Initial Velocity is " + finalizeO.to_s)
 
 elsif ($verifyAcceleration and $verifyFinali and $verifyFinalv) #X
-  initializeX = ($FinalI.to_f * $FinalI.to_f) - ($FinalI.to_f * $FinalI.to_f)
+  initializeX = ($Finalv.to_f * $Finalv.to_f) - ($FinalI.to_f * $FinalI.to_f)
   medX = 2.0 * $acceleration.to_f
   finalizeX = initializeX.to_f / medX.to_f
 
   puts ("Δx is " + finalizeX.to_s)
 
 elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) #A
-  
+  initializeA = ($Finalv.to_f * $Finalv.to_f) - ($FinalI.to_f * $FinalI.to_f)
+  medA = 2.0 * $DeltaX.to_f
+  finalizeA = initializeA.to_f / medA.to_f
 
+  puts ("Acceleration is " + finalizeA.to_s)
+
+else
+  abort "Run again - Error invalid"
 end
-
-=begin
-v = 2.5
-i = 2.9
-d = 0.39
-a = -3
-=end
