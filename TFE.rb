@@ -8,7 +8,7 @@ puts "Enter Final Velocity: "
 
 def FinalV()
   $Finalv = gets.chomp()
-  $verifyFinalv = Integer($Finalv) rescue false
+  $verifyFinalv = Float($Finalv) rescue false
   if $verifyFinalv
   elsif $Finalv.empty?
     puts "You do not have Final Velocity \n"
@@ -25,7 +25,7 @@ puts "Enter Initial Velocity: "
 
 def FinalI()
   $FinalI = gets.chomp()
-  $verifyFinali = Integer($FinalI) rescue false
+  $verifyFinali = Float($FinalI) rescue false
   if $verifyFinali
   elsif $FinalI.empty?
     puts "You do not have Initial Velocity \n"
@@ -45,7 +45,7 @@ puts "Enter a Δx: "
 
 def DeltaX()
   $DeltaX = gets.chomp()
-  $verifyDeltax= Integer($DeltaX) rescue false
+  $verifyDeltax= Float($DeltaX) rescue false
   if $verifyDeltax
   elsif $DeltaX.empty?
     puts "You do not have Δx \n"
@@ -62,7 +62,7 @@ puts "Enter a Acceleration: "
 
 def acceleration()
   $acceleration = gets.chomp()
-  $verifyAcceleration= Integer($acceleration) rescue false
+  $verifyAcceleration= Float($acceleration) rescue false
   if $verifyAcceleration
   elsif $acceleration.empty?
     puts "You do not have Acceleration \n"
@@ -75,18 +75,18 @@ end
 acceleration()
 
 if ($verifyAcceleration and $verifyDeltax and $verifyFinali) #F
-  initializeF = 2 * $acceleration.to_i * $DeltaX.to_i
-  squareF = $FinalI.to_i.pow(2)
-  medF = initializeF.to_i + squareF.to_i
-  finalizeF = Math.sqrt(medF.to_i)
+  initializeF = 2 * $acceleration.to_f * $DeltaX.to_f
+  squareF = $FinalI.to_f * $FinalI.to_f
+  medF = initializeF.to_i + squareF.to_f
+  finalizeF = Math.sqrt(medF.to_f)
 
   puts ("Final Velocity is " + finalizeF.to_s)
 
 elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) #O
-  initializeO = 2 * $acceleration.to_i * $DeltaX.to_i
-  squareO = $Finalv.to_i.pow(2)
-  medO = initializeO.to_i - squareO.to_i
-  finalizeO = -Math.sqrt(medO.to_i)
+  initializeO = 2 * $acceleration.to_f * $DeltaX.to_f
+  squareO = $Finalv.to_f * $Finalv.to_f
+  medO = (initializeO.to_f - squareO.to_f) / -1
+  finalizeO = Math.sqrt(medO.to_f)
 
   puts ("Final Velocity is " + finalizeO.to_s)
 
