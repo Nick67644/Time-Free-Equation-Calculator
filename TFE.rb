@@ -3,6 +3,7 @@ sleep 0.25
 puts "\n⚠️ CLICK ENTER IF YOU DO NOT HAVE A NUMBER!"
 sleep 0.25
 
+# start of script
 
 puts "Enter Final Velocity: "
 
@@ -20,6 +21,7 @@ def FinalV()
 end
 FinalV()
 
+# Pulls the Final Velocity
 
 puts "Enter Initial Velocity: "
 
@@ -40,6 +42,7 @@ def FinalI()
 end
 FinalI()
 
+# Pulls the Initial Velocity
 
 puts "Enter a Δx: "
 
@@ -57,6 +60,7 @@ def DeltaX()
 end
 DeltaX()
 
+# Pulls the Δx
 
 puts "Enter a Acceleration: "
 
@@ -74,7 +78,9 @@ def acceleration()
 end
 acceleration()
 
-if ($verifyAcceleration and $verifyDeltax and $verifyFinali) #F
+# Pulls the Acceleration
+
+if ($verifyAcceleration and $verifyDeltax and $verifyFinali) # Allows you to find Final Velocity
   initializeF = 2 * $acceleration.to_f * $DeltaX.to_f
   squareF = $FinalI.to_f * $FinalI.to_f
   medF = initializeF.to_i + squareF.to_f
@@ -82,7 +88,7 @@ if ($verifyAcceleration and $verifyDeltax and $verifyFinali) #F
 
   puts ("Final Velocity is " + finalizeF.to_s)
 
-elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) #O
+elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) # Allows you to find Initial Velocity
   initializeO = 2 * $acceleration.to_f * $DeltaX.to_f
   squareO = $Finalv.to_f * $Finalv.to_f
   medO = (initializeO.to_f - squareO.to_f) / -1
@@ -90,14 +96,14 @@ elsif ($verifyAcceleration and $verifyDeltax and $verifyFinalv) #O
 
   puts ("Initial Velocity is " + finalizeO.to_s)
 
-elsif ($verifyAcceleration and $verifyFinali and $verifyFinalv) #X
+elsif ($verifyAcceleration and $verifyFinali and $verifyFinalv) # Allows you to find Δx
   initializeX = ($Finalv.to_f * $Finalv.to_f) - ($FinalI.to_f * $FinalI.to_f)
   medX = 2.0 * $acceleration.to_f
   finalizeX = initializeX.to_f / medX.to_f
 
   puts ("Δx is " + finalizeX.to_s)
 
-elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) #A
+elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) # Allows you to find Acceleration
   initializeA = ($Finalv.to_f * $Finalv.to_f) - ($FinalI.to_f * $FinalI.to_f)
   medA = 2.0 * $DeltaX.to_f
   finalizeA = initializeA.to_f / medA.to_f
@@ -105,5 +111,14 @@ elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) #A
   puts ("Acceleration is " + finalizeA.to_s)
 
 else
+  sleep 0.25
   abort "Run again - Error invalid"
 end
+
+=begin
+Test with these numbers:
+    f = 2.5
+    i = 2.9
+    d = 0.39
+    a = -3
+=end
