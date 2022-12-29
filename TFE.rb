@@ -109,11 +109,14 @@ elsif ($verifyDeltax and $verifyFinali and $verifyFinalv) # Allows you to find A
   finalizeA = initializeA.to_f / medA.to_f
 
   puts ("Acceleration is " + finalizeA.to_s)
+  sleep 0.5
+  puts("\nScript finished - Restart if you wish to run again.")
 
 else
   sleep 0.25
   abort "Run again - Error invalid"
 end
+
 
 =begin
 Test with these numbers:
